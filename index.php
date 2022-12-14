@@ -48,8 +48,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
-    <p><?php echo $hotels ?></p>
+    <!-- <ul>
+        <?php foreach($hotels as $element) { ?>
+        <li>
+            <h2><?php echo $element['name']; ?></h2>
+            <p><?php echo $element['description']; ?></p>
+            <p><?php echo $element['parking']; ?></p>
+            <p><?php echo $element['vote']; ?></p>
+            <p><?php echo $element['distance_to_center']; ?></p>
+        </li>
+        <?php } ?>
+    </ul> -->
+    <div class="container">
+    <table class="table table-dark">
+
+  <thead>
+    <tr>
+    <?php foreach($hotels as $element) { ?>
+      <th scope="col">#</th>
+      <th scope="col"><?php echo $element['name']; ?></th>
+      <?php } ?>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <?php foreach($hotels as $element) { ?>
+      <th scope="row">1</th>
+      <td><?php echo $element['description']; ?></td>
+      <?php } ?>
+    </tr>
+    <tr>
+    <?php foreach($hotels as $element) { ?>
+      <th scope="row">2</th>
+      <td><?php echo $element['vote']; ?></td>
+      <?php } ?>
+    </tr>
+    <tr>
+    <?php foreach($hotels as $element) { ?>
+      <th scope="row">3</th>
+      <td><?php echo $element['distance_to_center']; ?></td>
+      <?php } ?>
+    </tr>
+  </tbody>
+
+</table>
+</div>
 </body>
 </html>
